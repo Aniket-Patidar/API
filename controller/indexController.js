@@ -3,7 +3,7 @@ const ChannelModel = require("../model/channel");
 const { sendResponse, sendError } = require("../utils");
 
 exports.homepage = async (req, res) => {
-    res.send("homepage");
+    res.send(" Aniket home-page");
 }
 
 
