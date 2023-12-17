@@ -9,7 +9,17 @@ const PORT = 3005;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(compression(9));
-app.use(cors());
+
+
+const corsOptions = {
+    origin: "https://chat-apk-q8110w6nf-anikepa.vercel.app", // Single origin
+    methods: ["POST", "GET", "DELETE", "PUT"], // Array of methods
+    credentials: true,
+};
+app.use(cors(corsOptions));
+
+
+
 databaseConnect();
 
 app.use("/", require("./router/indexRoute"));
