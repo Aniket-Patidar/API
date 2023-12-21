@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const url = "mongodb+srv://aniketpatidar76:aniketpatidar76@whatsup.gkhpbkr.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://aniketpatidar76:aniketpatidar76@cluster0.dndifal.mongodb.net/?retryWrites=true&w=majority"
 
 
 exports.databaseConnect = async () => {
