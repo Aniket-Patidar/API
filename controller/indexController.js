@@ -6,11 +6,12 @@ exports.homepage = async (req, res) => {
     res.send(" Aniket home-page");
 }
 
-exports.about = async (req, res) => {
+exports.homepage = async (req, res) => {
     res.send(" Aniket About-page");
 }
 
 
+/*Douts  */
 exports.channel = async (req, res) => {
     const channelUsers = req.body.channelUsers;
     const firstUser = channelUsers[0];
@@ -62,11 +63,9 @@ exports.channelList = async (req, res) => {
 
 exports.searchUser = async (req, res) => {
     const requestData = req.query;
-    res.status(200).send(requestData);
-    
-    // const isUserExist = await userMode.findOne({ email: requestData.email })
-    // if (!isUserExist) return sendError(res, {}, "No user found!");
-    // sendResponse(res, isUserExist, "user found successfully", true, 200);
+    const isUserExist = await userMode.findOne({ email: requestData.email })
+    if (!isUserExist) return sendError(res, {}, "No user found!");
+    sendResponse(res, isUserExist, "user found successfully", true, 200);
 }
 
 exports.sendMessage = async (req, res) => {
