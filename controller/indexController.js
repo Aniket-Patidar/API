@@ -62,9 +62,11 @@ exports.channelList = async (req, res) => {
 
 exports.searchUser = async (req, res) => {
     const requestData = req.query;
-    const isUserExist = await userMode.findOne({ email: requestData.email })
-    if (!isUserExist) return sendError(res, {}, "No user found!");
-    sendResponse(res, isUserExist, "user found successfully", true, 200);
+    res.status(200).send(requestData);
+    
+    // const isUserExist = await userMode.findOne({ email: requestData.email })
+    // if (!isUserExist) return sendError(res, {}, "No user found!");
+    // sendResponse(res, isUserExist, "user found successfully", true, 200);
 }
 
 exports.sendMessage = async (req, res) => {
