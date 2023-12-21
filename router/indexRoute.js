@@ -3,7 +3,6 @@ const { createUser, login, channel, searchUser, channelList, sendMessage, homepa
 const { validateCreateUser, validateSearchUser, validateCreateChannel, validateGetChannelList, validateAddMessage } = require('../utils/validator');
 const router = express.Router();
 router.get("/", homepage);
-router.get("/about", about);
 router.post("/create-user", validateCreateUser, createUser);
 router.post("/channel", validateCreateChannel, channel);
 router.get("/search-user", validateSearchUser, searchUser);
