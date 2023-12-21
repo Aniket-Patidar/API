@@ -6,8 +6,11 @@ exports.homepage = async (req, res) => {
     res.send(" Aniket home-page");
 }
 
+exports.about = async (req, res) => {
+    res.send(" Aniket About-page");
+}
 
-/*Douts  */
+
 exports.channel = async (req, res) => {
     const channelUsers = req.body.channelUsers;
     const firstUser = channelUsers[0];
